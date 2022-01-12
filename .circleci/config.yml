@@ -39,6 +39,7 @@ jobs:
       - run:
           name: run lint
           command: |
+            cd app
             . venv/bin/activate
             make lint           
   build-image:
