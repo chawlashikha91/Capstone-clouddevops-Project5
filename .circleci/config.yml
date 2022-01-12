@@ -37,7 +37,7 @@ jobs:
       - run:
           name: run lint
           command: |
-            . ~/repo/venv/bin/activate
+            . venv/bin/activate
             cd app
             # Install hadolint
             wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
