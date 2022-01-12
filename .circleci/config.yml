@@ -41,7 +41,7 @@ jobs:
           command: |
             cd app
             python3 -m venv ~/.venv
-            . venv/bin/activate
+            source ~/.venv/bin/activate
             make lint           
   build-image:
     docker:
