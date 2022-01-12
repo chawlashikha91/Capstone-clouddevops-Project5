@@ -58,8 +58,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            cd app \
-            && docker build -t chawlashikha91/mlpred .
+            docker build -t chawlashikha91/mlpred .
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push chawlashikha91/mlpred
 
