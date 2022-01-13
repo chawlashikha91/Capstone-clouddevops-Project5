@@ -87,6 +87,7 @@ jobs:
              kubectl apply -f deployment.yml
              kubectl get pods
              kubectl get services
+             
 workflows:
   default:
     jobs:
