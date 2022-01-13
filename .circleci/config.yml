@@ -74,6 +74,7 @@ jobs:
         type: string
     steps:
       - checkout
+      - kubernetes/install
       - run:
           name: Install the eksctl tool
           command: |
