@@ -77,6 +77,7 @@ jobs:
           name: Deploying application to EKS
           command: |
              aws eks --region us-east-2 update-kubeconfig --name capstone
+             aws configure
              kubectl config use-context arn:aws:eks:us-east-2:572199075108:cluster/capstone
              kubectl apply -f deployment.yml
              kubectl get pods
@@ -84,11 +85,11 @@ jobs:
 workflows:
   default:
     jobs:
-      - install_lint
+#      - install_lint
 #      - lint:
 #          requires: [install]
-      - build-image:
-          requires: [install_lint]
+#      - build-image:
+#          requires: [install_lint]
       - deploy:
-          requires: [build-image]
+#          requires: [build-image]
           cluster-name: capstone
