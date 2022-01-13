@@ -74,6 +74,7 @@ jobs:
         type: string
     steps:
       - checkout
+      
       - aws-eks/create-cluster:
           cluster-name: << parameters.cluster-name >>
           aws-region: <<parameters.aws-region >>
