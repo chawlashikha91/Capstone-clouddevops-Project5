@@ -77,6 +77,7 @@ jobs:
       - kubernetes/install
       - aws-eks/update-kubeconfig-with-authenticator:
           cluster-name: << parameters.cluster-name >>
+          aws-region: <<parameters.aws-region >>
       - run:
           name: Deploying application to EKS
           command: |
