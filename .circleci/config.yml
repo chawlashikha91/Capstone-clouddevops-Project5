@@ -98,3 +98,4 @@ workflows:
       - deploy:
 #          requires: [build-image]
           cluster-name: capstone
+          aws-region: us-east-2
