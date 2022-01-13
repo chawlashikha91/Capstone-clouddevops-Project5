@@ -61,7 +61,6 @@ jobs:
             docker build -t chawlashikha91/mlpred .
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push chawlashikha91/mlpred
-
   deploy:
     executor: aws-eks/python3
     parameters:
