@@ -92,9 +92,7 @@ jobs:
             $SUDO mv eksctl_download/eksctl /usr/local/bin/
             rmdir eksctl_download
 
-      - aws-eks/create-cluster:
-          cluster-name: << parameters.cluster-name >>
-          aws-region: <<parameters.aws-region >>
+
       - aws-eks/update-kubeconfig-with-authenticator:
           cluster-name: << parameters.cluster-name >>
           aws-region: <<parameters.aws-region >>
@@ -102,11 +100,15 @@ jobs:
           name: Deploying application to EKS
           command: |
              aws eks --region us-east-2 update-kubeconfig --name capstone
-             aws configure
-             kubectl config use-context arn:aws:eks:us-east-2:572199075108:cluster/capstone
+             kubectl config use-context arn:aws:eks:us-east-2:751020218970:cluster/capstone
              kubectl apply -f deployment.yml
              kubectl get pods
              kubectl get services
+
+
+      # - aws-eks/create-cluster:
+      #     cluster-name: << parameters.cluster-name >>
+      #     aws-region: <<parameters.aws-region >>
 
 workflows:
   default:
