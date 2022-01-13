@@ -68,6 +68,10 @@ jobs:
         description: |
           capstone
         type: string
+      aws-region:
+        description: |
+          us-east-2
+        type: string
     steps:
       - checkout
       - kubernetes/install
