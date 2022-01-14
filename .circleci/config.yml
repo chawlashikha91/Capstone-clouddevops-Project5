@@ -92,7 +92,6 @@ jobs:
             fi
             $SUDO mv eksctl_download/eksctl /usr/local/bin/
             rmdir eksctl_download
-
       - aws-eks/create-cluster:
           cluster-name: << parameters.cluster-name >>
           aws-region: <<parameters.aws-region >>
