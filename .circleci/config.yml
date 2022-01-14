@@ -66,7 +66,7 @@ jobs:
     parameters:
       cluster-name:
         description: |
-          capstone
+          capstone12
         type: string
       aws-region:
         description: |
@@ -102,8 +102,8 @@ jobs:
       - run:
           name: Deploying application to EKS
           command: |
-             aws eks --region us-east-2 update-kubeconfig --name capstone
-             kubectl config use-context arn:aws:eks:us-east-2:751020218970:cluster/capstone
+             aws eks --region us-east-2 update-kubeconfig --name capstone12
+             kubectl config use-context arn:aws:eks:us-east-2:751020218970:cluster/capstone12
              kubectl apply -f deployment.yml
              kubectl get pods
              kubectl get services
@@ -113,12 +113,12 @@ jobs:
 workflows:
   default:
     jobs:
-      - install_lint
+#      - install_lint
 #      - lint:
 #          requires: [install]
-      - build-image:
-          requires: [install_lint]
+#      - build-image:
+#          requires: [install_lint]
       - deploy:
-          requires: [build-image]
-          cluster-name: capstone
+#          requires: [build-image]
+          cluster-name: capstone12
           aws-region: us-east-2
